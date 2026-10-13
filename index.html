@@ -1,0 +1,295 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fff7f5">
+
+  <title>Solman ❤️ Pravalika | Wedding Countdown</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 24px;
+      font-family: Georgia, "Times New Roman", serif;
+      background: linear-gradient(135deg, #fff4f1, #fffdf8, #ffe9ed);
+      color: #672638;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 900px;
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+      padding: 55px 30px 40px;
+      border: 1px solid #f5d4d0;
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.88);
+      box-shadow: 0 18px 55px rgba(133, 49, 70, 0.12);
+    }
+
+    .flowers {
+      position: absolute;
+      font-size: 70px;
+      opacity: 0.75;
+      pointer-events: none;
+    }
+
+    .top-left {
+      top: 5px;
+      left: 10px;
+    }
+
+    .top-right {
+      top: 5px;
+      right: 10px;
+    }
+
+    .bottom-left {
+      bottom: 5px;
+      left: 10px;
+    }
+
+    .bottom-right {
+      bottom: 5px;
+      right: 10px;
+    }
+
+    .rings {
+      font-size: 48px;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-size: clamp(32px, 5vw, 55px);
+      font-weight: normal;
+      font-style: italic;
+      margin-bottom: 24px;
+      color: #8e3049;
+    }
+
+    .names {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 18px;
+      font-size: clamp(25px, 4vw, 40px);
+      margin-bottom: 24px;
+    }
+
+    .heart {
+      color: #e74d75;
+    }
+
+    .subtitle {
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+      letter-spacing: 5px;
+      margin-bottom: 12px;
+      color: #a45b6c;
+    }
+
+    .date {
+      font-family: Arial, sans-serif;
+      font-size: 21px;
+      color: #392d32;
+      margin-bottom: 35px;
+    }
+
+    .countdown {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      max-width: 690px;
+      margin: 0 auto 30px;
+    }
+
+    .time-box {
+      padding: 23px 8px;
+      border: 1px solid #f6c4d0;
+      border-radius: 15px;
+      background: linear-gradient(145deg, #fff0f3, #ffe1e8);
+    }
+
+    .number {
+      display: block;
+      font-family: Arial, sans-serif;
+      font-size: clamp(28px, 5vw, 48px);
+      font-weight: bold;
+      color: #c52e5b;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .label {
+      display: block;
+      margin-top: 9px;
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      letter-spacing: 2px;
+      color: #713449;
+    }
+
+    .message {
+      font-size: clamp(22px, 3.5vw, 32px);
+      font-style: italic;
+      color: #a83455;
+      margin: 20px 0;
+    }
+
+    .footer {
+      margin-top: 25px;
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+      color: #906a75;
+    }
+
+    @media (max-width: 520px) {
+      body {
+        padding: 12px;
+      }
+
+      .card {
+        padding: 45px 14px 30px;
+        border-radius: 18px;
+      }
+
+      .countdown {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .time-box {
+        padding: 18px 6px;
+      }
+
+      .flowers {
+        font-size: 40px;
+      }
+
+      .subtitle {
+        letter-spacing: 3px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="card">
+    <div class="flowers top-left">🌸</div>
+    <div class="flowers top-right">🌷</div>
+    <div class="flowers bottom-left">🌺</div>
+    <div class="flowers bottom-right">🌸</div>
+
+    <div class="rings">💍</div>
+
+    <h1>Our Wedding Countdown</h1>
+
+    <div class="names">
+      <span>Solman</span>
+      <span class="heart">♥</span>
+      <span>Pravalika</span>
+    </div>
+
+    <p class="subtitle">OUR SPECIAL DAY</p>
+
+    <p class="date">📅 April 7, 2027</p>
+
+    <section class="countdown" aria-label="Wedding countdown">
+      <div class="time-box">
+        <span class="number" id="days">0</span>
+        <span class="label">DAYS</span>
+      </div>
+
+      <div class="time-box">
+        <span class="number" id="hours">00</span>
+        <span class="label">HOURS</span>
+      </div>
+
+      <div class="time-box">
+        <span class="number" id="minutes">00</span>
+        <span class="label">MINUTES</span>
+      </div>
+
+      <div class="time-box">
+        <span class="number" id="seconds">00</span>
+        <span class="label">SECONDS</span>
+      </div>
+    </section>
+
+    <p class="message" id="message">
+      Counting down to forever <span class="heart">♥</span>
+    </p>
+
+    <p class="footer">
+      Two hearts, one journey, a lifetime of love.
+    </p>
+  </main>
+
+  <script>
+    // Wedding date: April 7, 2027 at midnight (local time).
+    const weddingDate = new Date(2027, 3, 7, 0, 0, 0).getTime();
+
+    const daysElement = document.getElementById("days");
+    const hoursElement = document.getElementById("hours");
+    const minutesElement = document.getElementById("minutes");
+    const secondsElement = document.getElementById("seconds");
+    const messageElement = document.getElementById("message");
+
+    function updateCountdown() {
+      const now = Date.now();
+      const difference = weddingDate - now;
+
+      if (difference <= 0) {
+        daysElement.textContent = "0";
+        hoursElement.textContent = "00";
+        minutesElement.textContent = "00";
+        secondsElement.textContent = "00";
+
+        messageElement.textContent =
+          "Today is the beginning of forever! ❤️";
+
+        clearInterval(countdownTimer);
+        return;
+      }
+
+      const days = Math.floor(
+        difference / (1000 * 60 * 60 * 24)
+      );
+
+      const hours = Math.floor(
+        (difference / (1000 * 60 * 60)) % 24
+      );
+
+      const minutes = Math.floor(
+        (difference / (1000 * 60)) % 60
+      );
+
+      const seconds = Math.floor(
+        (difference / 1000) % 60
+      );
+
+      daysElement.textContent = days;
+      hoursElement.textContent = String(hours).padStart(2, "0");
+      minutesElement.textContent = String(minutes).padStart(2, "0");
+      secondsElement.textContent = String(seconds).padStart(2, "0");
+    }
+
+    // Display the countdown immediately, then refresh every second.
+    updateCountdown();
+    const countdownTimer = setInterval(updateCountdown, 1000);
+  </script>
+</body>
+</html>
+```
